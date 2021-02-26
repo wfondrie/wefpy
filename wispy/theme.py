@@ -7,7 +7,8 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager
 import seaborn as sns
 
-def poster(fg_color: str = "#404040", accent: str = "#01BCA3") -> Tuple[str]:
+def poster(fg_color: str = "#404040", accent: str = "#01BCA3",
+           dark: bool = False) -> Tuple[str]:
     """
     Use my poster figure style.
 
@@ -21,6 +22,8 @@ def poster(fg_color: str = "#404040", accent: str = "#01BCA3") -> Tuple[str]:
     accent : str
         The color used for important data points. This is the first
         color in the color palette
+    dark : bool
+        Invert colors for dark mode.
 
     Returns
     -------
@@ -28,6 +31,9 @@ def poster(fg_color: str = "#404040", accent: str = "#01BCA3") -> Tuple[str]:
         Colors in the color palette.
     """
     matplotlib.font_manager.findSystemFonts()
+    if dark:
+        fg_color = "#ffffff"
+
     style = {"axes.edgecolor": fg_color,
              "axes.labelcolor": fg_color,
              "text.color": fg_color,
