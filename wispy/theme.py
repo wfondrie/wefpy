@@ -51,7 +51,8 @@ def poster(fg_color: str = "#404040", accent: str = "#01BCA3",
     return palette
 
 
-def talk(fg_color: str = "#404040", accent: str = "#01BCA3") -> Tuple[str]:
+def talk(fg_color: str = "#404040", accent: str = "#01BCA3",
+         dark: bool = False) -> Tuple[str]:
     """
     Use my slide figure style.
 
@@ -71,7 +72,7 @@ def talk(fg_color: str = "#404040", accent: str = "#01BCA3") -> Tuple[str]:
     Tuple[str]
         Colors in the color palette.
     """
-    palette = poster(fg_color, accent)
+    palette = poster(fg_color, accent, dark=dark)
     sns.set_context("talk", rc={"lines.linewidth": 2})
     return palette
 
